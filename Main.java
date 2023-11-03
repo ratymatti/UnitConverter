@@ -46,8 +46,23 @@ public class Main {
             int selectedUnits = scanner.nextInt();
             String unitsToConvert = getUnits(selectedUnits);
 
-            System.out.print("Enter temperature you want to convert: ");
-            double temperature = scanner.nextDouble();
+            double temperature = 0.0;
+            boolean validInput = false;
+            while (!validInput) {
+                try {
+                    System.out.print("Enter temperature you want to convert: ");
+                    String temperatureInput = scanner.next();
+
+                    // Replace commas with periods
+                    temperatureInput = temperatureInput.replace(',', '.');
+
+                    temperature = Double.parseDouble(temperatureInput);
+                    validInput = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid numeric temperature.");
+                }
+            }
+
             double result = TemperatureConverter.convertTemperature(unitsToConvert, temperature);
 
             System.out.println("\n" + temperature + " " + unitsToConvert + " is " + result + "\n");
