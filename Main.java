@@ -31,6 +31,8 @@ public class Main {
         }
     }
 
+
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Boolean running = true;
@@ -38,10 +40,27 @@ public class Main {
         while (running) {
             printOptions();
             System.out.print("Enter your choise: ");
+
             int selectedUnits = scanner.nextInt();
+            String unitsToConvert = getUnits(selectedUnits);
+
             System.out.print("Enter temperature you want to convert: ");
-            double temperature = scanner.nextDouble(); 
+            double temperature = scanner.nextDouble();
+            double result = TemperatureConverter.convertTemperature(unitsToConvert, temperature);
+            
+            System.out.println(temperature + " " + unitsToConvert + " is " + result);
+
+            scanner.nextLine();
+
+            System.out.print("Do you want to convert some other temperature? (yes/no) ");
+            String isContinue = scanner.nextLine();
+
+            if (isContinue.equals("no")) {
+                running = false;
+                System.out.println("Goodbye!");
+            }
         }
+        scanner.close();
 
     }
 }
