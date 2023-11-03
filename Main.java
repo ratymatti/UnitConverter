@@ -31,7 +31,7 @@ public class Main {
         }
     }
 
-    public static String getTemperatureUnits(int selection) {
+    public static String getWeightUnits(int selection) {
         switch(selection) {
             case 1:
                 return "Kilograms to Pounds";
@@ -50,7 +50,7 @@ public class Main {
         }
     }
 
-    public static String getWeightUnits(int selection) {
+    public static String getTemperatureUnits(int selection) {
         switch(selection) {
             case 1:
                 return "Fahrenheit to Celcius";
@@ -109,9 +109,11 @@ public class Main {
             if (selection.equals("Temperatures")) {
                 doTemperatureConversions(scanner);
             } else {
-                System.out.println("Under construction...\n");
+                doWeightConversions(scanner);
+                
             }
-            scanner.nextLine();
+
+            
             System.out.print("Do you want to quit? (yes/no) ");
             String isQuit = scanner.nextLine().toLowerCase();
 
@@ -184,6 +186,7 @@ public class Main {
     }
 
     public static void doWeightConversions(Scanner scanner) {
+        double weight = 0.0;
         boolean running = true;
         String unitsToConvert = "";
 
@@ -198,7 +201,8 @@ public class Main {
                     int selectedUnits = scanner.nextInt();
 
                     if (selectedUnits >= 1 && selectedUnits <= 6) {
-                        unitsToConvert = getUnits(selectedUnits);
+                        unitsToConvert = getWeightUnits(selectedUnits);
+                        System.out.println(unitsToConvert);
                         validInput = true;    
                     } else {
                         System.out.println("Invalid input. Please enter a number between 1-6.");    
@@ -213,25 +217,25 @@ public class Main {
 
             while (!validInput) {
                 try {
-                    System.out.print("Enter temperature you want to convert: ");
-                    String temperatureInput = scanner.next();
+                    System.out.print("Enter weight you want to convert: ");
+                    String weightInput = scanner.next();
 
                     // Replace commas with periods
-                    temperatureInput = temperatureInput.replace(',', '.');
-                    temperature = Double.parseDouble(temperatureInput);
+                    weightInput = weightInput.replace(',', '.');
+                    weight = Double.parseDouble(weightInput);
                     validInput = true;
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid input. Please enter a valid numeric temperature.");
                 }
             }
 
-            double result = TemperatureConverter.convertTemperature(unitsToConvert, temperature);
+            double result = WeightConverter.convertWeight(unitsToConvert, weight);
 
-            System.out.println("\n" + temperature + " " + unitsToConvert + " is " + result + "\n");
+            System.out.println("\n" + weight + " " + unitsToConvert + " is " + result + "\n");
 
             scanner.nextLine();
 
-            System.out.print("Do you want to convert some other temperature? (yes/no) ");
+            System.out.print("Do you want to convert some other weight? (yes/no) ");
             String isContinue = scanner.nextLine().toLowerCase();
 
             if (isContinue.equals("no")) {
