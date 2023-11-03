@@ -13,7 +13,7 @@ public class Main {
                 System.out.println("2: Weights");
                 break;
             case "Temperatures":
-                System.out.println("1. Fahrenheit to Celcius");
+                System.out.println("\n1. Fahrenheit to Celcius");
                 System.out.println("2. Celcius to Fahrenheit");
                 System.out.println("3. Celcius to Kelvin");
                 System.out.println("4. Kelvin to Celcius");
@@ -21,7 +21,7 @@ public class Main {
                 System.out.println("6. Kelvin to Fahrenheit");
                 break;
             case "Weights":
-                System.out.println("1. Kilograms to Pounds");
+                System.out.println("\n1. Kilograms to Pounds");
                 System.out.println("2. Pounds to Kilograms");
                 System.out.println("3. Grams to Ounces");
                 System.out.println("4. Ounces to Grams");
@@ -62,7 +62,59 @@ public class Main {
             printOptions("Units");
 
             boolean validInput = false;
-            String unitsToConvert = "";
+            String selection = "";
+
+            while (!validInput) {
+                try {
+                    System.out.print("\nEnter your choice: ");
+                    int selectedUnits = scanner.nextInt();
+
+                    if (selectedUnits >= 1 && selectedUnits <= 2) {
+                        if (selectedUnits == 1) {
+                            selection = "Temperatures";
+                        } else if (selectedUnits == 2) {
+                            selection = "Weights";
+                        }
+                        validInput = true;    
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1-2.");    
+                    }
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a number between 1-2.");
+                    scanner.nextLine();
+                }
+            }
+            validInput = false;
+
+            if (selection.equals("Temperatures")) {
+                doTemperatureConversions(scanner);
+            } else {
+                System.out.println("Under construction...\n");
+            }
+            scanner.nextLine();
+            System.out.print("Do you want to quit? (yes/no) ");
+            String isQuit = scanner.nextLine().toLowerCase();
+
+            if (isQuit.equals("yes")) {
+                running = false;
+            }
+
+        }
+        System.out.println("\nGoodbye!\n");
+        scanner.close();
+
+    }
+
+    public static void doTemperatureConversions(Scanner scanner) {
+        double temperature = 0.0;
+        boolean running = true;
+        String unitsToConvert = "";
+
+        while (running) {
+            boolean validInput = false;
+
+            printOptions("Temperatures");
 
             while (!validInput) {
                 try {
@@ -83,8 +135,6 @@ public class Main {
             }
             validInput = false;
 
-            double temperature = 0.0;
-            
             while (!validInput) {
                 try {
                     System.out.print("Enter temperature you want to convert: ");
@@ -110,10 +160,7 @@ public class Main {
 
             if (isContinue.equals("no")) {
                 running = false;
-                System.out.println("\nGoodbye!\n");
             }
-        }
-        scanner.close();
-
+        }       
     }
 }
