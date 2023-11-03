@@ -1,5 +1,6 @@
 class TemperatureConverter {
-    public double convertTemperature(String unitToUnit, double temperature) {
+
+    public static double convertTemperature(String unitToUnit, double temperature) {
         double result = .0;
         switch(unitToUnit) {
             case "Fahrenheit to Celcius":
