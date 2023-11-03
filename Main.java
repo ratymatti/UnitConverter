@@ -4,14 +4,31 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void printOptions() {
-        System.out.println("Choose units to convert:");
-        System.out.println("1. Fahrenheit to Celcius");
-        System.out.println("2. Celcius to Fahrenheit");
-        System.out.println("3. Celcius to Kelvin");
-        System.out.println("4. Kelvin to Celcius");
-        System.out.println("5. Fahrenheit to Kelvin");
-        System.out.println("6. Kelvin to Fahrenheit");
+    public static void printOptions(String selection) {
+        
+        switch(selection) {
+            case "Units":
+                System.out.println("Choose units to convert:");
+                System.out.println("1: Temperatures");
+                System.out.println("2: Weights");
+                break;
+            case "Temperatures":
+                System.out.println("1. Fahrenheit to Celcius");
+                System.out.println("2. Celcius to Fahrenheit");
+                System.out.println("3. Celcius to Kelvin");
+                System.out.println("4. Kelvin to Celcius");
+                System.out.println("5. Fahrenheit to Kelvin");
+                System.out.println("6. Kelvin to Fahrenheit");
+                break;
+            case "Weights":
+                System.out.println("1. Kilograms to Pounds");
+                System.out.println("2. Pounds to Kilograms");
+                System.out.println("3. Grams to Ounces");
+                System.out.println("4. Ounces to Grams");
+                System.out.println("5. Grams to Grains");
+                System.out.println("6. Grains to Grams");
+                break;    
+        }
     }
 
     public static String getUnits(int selection) {
@@ -39,10 +56,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Boolean running = true;
 
-        System.out.println("\nWelcome to Temperature Converter!\n");
+        System.out.println("\nWelcome to Unit Converter!\n");
 
         while (running) {
-            printOptions();
+            printOptions("Units");
 
             boolean validInput = false;
             String unitsToConvert = "";
