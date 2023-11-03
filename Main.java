@@ -37,6 +37,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Boolean running = true;
 
+        System.out.println("\nWelcome to Temperature Converter!\n");
+
         while (running) {
             printOptions();
             System.out.print("Enter your choise: ");
@@ -47,17 +49,17 @@ public class Main {
             System.out.print("Enter temperature you want to convert: ");
             double temperature = scanner.nextDouble();
             double result = TemperatureConverter.convertTemperature(unitsToConvert, temperature);
-            
-            System.out.println(temperature + " " + unitsToConvert + " is " + result);
+
+            System.out.println("\n" + temperature + " " + unitsToConvert + " is " + result + "\n");
 
             scanner.nextLine();
 
             System.out.print("Do you want to convert some other temperature? (yes/no) ");
-            String isContinue = scanner.nextLine();
+            String isContinue = scanner.nextLine().toLowerCase();
 
             if (isContinue.equals("no")) {
                 running = false;
-                System.out.println("Goodbye!");
+                System.out.println("\nGoodbye!\n");
             }
         }
         scanner.close();
