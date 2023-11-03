@@ -1,3 +1,5 @@
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -41,13 +43,31 @@ public class Main {
 
         while (running) {
             printOptions();
-            System.out.print("Enter your choise: ");
 
-            int selectedUnits = scanner.nextInt();
-            String unitsToConvert = getUnits(selectedUnits);
+            boolean validInput = false;
+            String unitsToConvert = "";
+
+            while (!validInput) {
+                try {
+                    System.out.print("Enter your choice: ");
+                    int selectedUnits = scanner.nextInt();
+
+                    if (selectedUnits >= 1 && selectedUnits <= 6) {
+                        unitsToConvert = getUnits(selectedUnits);
+                        validInput = true;    
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1-6.");    
+                    }
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a number between 1-6.");
+                    scanner.nextLine();
+                }
+            }
+            validInput = false;
 
             double temperature = 0.0;
-            boolean validInput = false;
+            
             while (!validInput) {
                 try {
                     System.out.print("Enter temperature you want to convert: ");
@@ -55,7 +75,6 @@ public class Main {
 
                     // Replace commas with periods
                     temperatureInput = temperatureInput.replace(',', '.');
-
                     temperature = Double.parseDouble(temperatureInput);
                     validInput = true;
                 } catch (NumberFormatException e) {
