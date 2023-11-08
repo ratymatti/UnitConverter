@@ -1,4 +1,3 @@
-
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -8,9 +7,10 @@ public class Main {
         
         switch(selection) {
             case "Units":
-                System.out.println("Choose units to convert:");
+                System.out.println("\nChoose units to convert:");
                 System.out.println("1: Temperatures");
                 System.out.println("2: Weights");
+                System.out.println("\nOr type 'quit' to exit program.");
                 break;
             case "Temperatures":
                 System.out.println("\n1. Fahrenheit to Celcius");
@@ -35,7 +35,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Boolean running = true;
 
-        System.out.println("\nWelcome to Unit Converter!\n");
+        System.out.println("\nWelcome to Unit Converter!");
 
         while (running) {
             printOptions("Units");
@@ -46,12 +46,21 @@ public class Main {
             while (!validInput) {
                 try {
                     System.out.print("\nEnter your choice: ");
-                    int selectedUnits = scanner.nextInt();
+                    String selectedAction = scanner.nextLine();
+                    int selectedNumber = 0;
 
-                    if (selectedUnits >= 1 && selectedUnits <= 2) {
-                        if (selectedUnits == 1) {
+                    if (selectedAction.toLowerCase().equals("quit")) {
+                        System.out.println("\nGoodbye!\n");
+                        scanner.close();
+                        System.exit(0);
+                    } else {
+                        selectedNumber = Integer.parseInt(selectedAction);
+                    }
+
+                    if (selectedNumber >= 1 && selectedNumber <= 2) {
+                        if (selectedNumber == 1) {
                             selection = "Temperatures";
-                        } else if (selectedUnits == 2) {
+                        } else if (selectedNumber == 2) {
                             selection = "Weights";
                         }
                         validInput = true;    
@@ -72,19 +81,7 @@ public class Main {
                 doWeightConversions(scanner);
                 
             }
-
-            
-            System.out.print("Do you want to quit? (yes/no) ");
-            String isQuit = scanner.nextLine().toLowerCase();
-
-            if (isQuit.equals("yes")) {
-                running = false;
-            }
-
         }
-        System.out.println("\nGoodbye!\n");
-        scanner.close();
-
     }
 
     public static void doTemperatureConversions(Scanner scanner) {
