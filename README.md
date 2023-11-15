@@ -71,14 +71,14 @@ The Unit Converter is a Java program designed to convert between different units
 
     32.0 Celsius is 89.6 Fahrenheit
 
-    Do you want to convert some other temperature? (yes/no) yes
-
-    Enter your choice: 3
-
-    Enter temperature you want to convert: 273.15
-
-    273.15 Celsius is 523.67 Fahrenheit
-
     Do you want to convert some other temperature? (yes/no) no
+
+    Choose units to convert:
+    1: Temperatures
+    2: Weights
+
+    Or type 'quit' to exit program.
+
+    Enter your choice: quit
 
     Goodbye!
