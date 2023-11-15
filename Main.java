@@ -18,7 +18,7 @@ public class Main {
                 System.out.println("3. Celcius to Kelvin");
                 System.out.println("4. Kelvin to Celcius");
                 System.out.println("5. Fahrenheit to Kelvin");
-                System.out.println("6. Kelvin to Fahrenheit");
+                System.out.println("6. Kelvin to Fahrenheit\n");
                 break;
             case "Weights":
                 System.out.println("\n1. Kilograms to Pounds");
@@ -26,7 +26,7 @@ public class Main {
                 System.out.println("3. Grams to Ounces");
                 System.out.println("4. Ounces to Grams");
                 System.out.println("5. Grams to Grains");
-                System.out.println("6. Grains to Grams");
+                System.out.println("6. Grains to Grams\n");
                 break;    
         }
     }
@@ -115,7 +115,7 @@ public class Main {
 
             while (!validInput) {
                 try {
-                    System.out.print("Enter temperature you want to convert: ");
+                    System.out.print("\nEnter temperature you want to convert: ");
                     String temperatureInput = scanner.next();
 
                     // Replace commas with periods
@@ -174,7 +174,7 @@ public class Main {
 
             while (!validInput) {
                 try {
-                    System.out.print("Enter weight you want to convert: ");
+                    System.out.print("\nEnter weight you want to convert: ");
                     String weightInput = scanner.next();
 
                     // Replace commas with periods
