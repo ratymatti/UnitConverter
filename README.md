@@ -47,38 +47,38 @@ The Unit Converter is a Java program designed to convert between different units
 
 ## Example Usage
 
-    ```bash
+    
     Welcome to Unit Converter!
 
     Choose units to convert:
     1: Temperatures
     2: Weights
-    
+
     Or type 'quit' to exit program.
-    
+
     Enter your choice: 1
-    
+
     1. Fahrenheit to Celsius
     2. Celsius to Fahrenheit
     3. Celsius to Kelvin
     4. Kelvin to Celsius
     5. Fahrenheit to Kelvin
     6. Kelvin to Fahrenheit
-    
+
     Enter your choice: 2
-    
+
     Enter temperature you want to convert: 32.0
-    
+
     32.0 Celsius is 89.6 Fahrenheit
-    
+
     Do you want to convert some other temperature? (yes/no) yes
-    
+
     Enter your choice: 3
-    
+
     Enter temperature you want to convert: 273.15
-    
+
     273.15 Celsius is 523.67 Fahrenheit
-    
+
     Do you want to convert some other temperature? (yes/no) no
-    
+
     Goodbye!
