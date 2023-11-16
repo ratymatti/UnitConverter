@@ -10,6 +10,7 @@ public class Main {
                 System.out.println("\nChoose units to convert:");
                 System.out.println("1: Temperatures");
                 System.out.println("2: Weights");
+                System.out.println("3. Lengths");
                 System.out.println("\nOr type 'quit' to exit program.");
                 break;
             case "Temperatures":
@@ -66,19 +67,23 @@ public class Main {
                         selectedNumber = Integer.parseInt(selectedAction);
                     }
 
-                    if (selectedNumber >= 1 && selectedNumber <= 2) {
+                    if (selectedNumber >= 1 && selectedNumber <= 3) {
                         if (selectedNumber == 1) {
                             selection = "Temperatures";
                         } else if (selectedNumber == 2) {
                             selection = "Weights";
+                        } else if (selectedNumber == 3) {
+                            selection = "Lengths";
                         }
-                        validInput = true;    
+
+                        validInput = true;
+
                     } else {
-                        System.out.println("Invalid input. Please enter a number between 1-2.");    
+                        System.out.println("Invalid input. Please enter a number between 1-3.");    
                     }
 
                 } catch (InputMismatchException e) {
-                    System.out.println("Invalid input. Please enter a number between 1-2.");
+                    System.out.println("Invalid input. Please enter a number between 1-3.");
                     scanner.nextLine();
                 }
             }
@@ -86,9 +91,10 @@ public class Main {
 
             if (selection.equals("Temperatures")) {
                 doTemperatureConversions(scanner);
-            } else {
-                doWeightConversions(scanner);
-                
+            } else if (selection.equals("Weights")) {
+                doWeightConversions(scanner);     
+            } else if (selection.equals("Lengths")) {
+                doLengthConversions(scanner);
             }
         }
     }
@@ -191,7 +197,7 @@ public class Main {
                     weight = Double.parseDouble(weightInput);
                     validInput = true;
                 } catch (NumberFormatException e) {
-                    System.out.println("Invalid input. Please enter a valid numeric temperature.");
+                    System.out.println("Invalid input. Please enter a valid numeric weigth.");
                 }
             }
 
@@ -202,6 +208,65 @@ public class Main {
             scanner.nextLine();
 
             System.out.print("Do you want to convert some other weight? (yes/no) ");
+            String isContinue = scanner.nextLine().toLowerCase();
+
+            if (isContinue.equals("no")) {
+                running = false;
+            }
+        } 
+    }
+
+    public static void doLengthConversions(Scanner scanner) {
+        double length = 0.0;
+        boolean running = true;
+        String unitsToConvert = "";
+
+        while (running) {
+            boolean validInput = false;
+
+            printOptions("Lengths");
+
+            while (!validInput) {
+                try {
+                    System.out.print("Enter your choice: ");
+                    int selectedUnits = scanner.nextInt();
+
+                    if (selectedUnits >= 1 && selectedUnits <= 8) {
+                        unitsToConvert = GetUnits.getLengthUnits(selectedUnits);
+                        System.out.println(unitsToConvert);
+                        validInput = true;    
+                    } else {
+                        System.out.println("Invalid input. Please enter a number between 1-8.");    
+                    }
+
+                } catch (InputMismatchException e) {
+                    System.out.println("Invalid input. Please enter a number between 1-8.");
+                    scanner.nextLine();
+                }
+            }
+            validInput = false;
+
+            while (!validInput) {
+                try {
+                    System.out.print("\nEnter length you want to convert: ");
+                    String lengthInput = scanner.next();
+
+                    // Replace commas with periods
+                    lengthInput = lengthInput.replace(',', '.');
+                    length = Double.parseDouble(lengthInput);
+                    validInput = true;
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input. Please enter a valid numeric length.");
+                }
+            }
+
+            double result = LengthConverter.convertLength(unitsToConvert, length);
+
+            System.out.println("\n" + length + " " + unitsToConvert + " is " + result + "\n");
+
+            scanner.nextLine();
+
+            System.out.print("Do you want to convert some other length? (yes/no) ");
             String isContinue = scanner.nextLine().toLowerCase();
 
             if (isContinue.equals("no")) {
