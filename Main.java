@@ -27,7 +27,16 @@ public class Main {
                 System.out.println("4. Ounces to Grams");
                 System.out.println("5. Grams to Grains");
                 System.out.println("6. Grains to Grams\n");
-                break;    
+                break;
+            case "Lengths":
+                System.out.println("\n1. Meters to Feet");
+                System.out.println("2. Feet to Meters");
+                System.out.println("3. Centimeters to Inches");
+                System.out.println("4. Inches to Centimeters");
+                System.out.println("5. Meters to Yards");
+                System.out.println("6. Yards to Meters");
+                System.out.println("7. Kilometers to Miles");
+                System.out.println("8. Miles to Kilometers\n");        
         }
     }
 
