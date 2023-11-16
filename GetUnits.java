@@ -35,5 +35,28 @@ public class GetUnits {
             default:
                 return "Error.";         
         }
-    }    
+    }
+    
+    public static String getLengthUnits(int selection) {
+        switch (selection) {
+            case 1:
+                return "Meters to Feet";
+            case 2:
+                return "Feet to Meters";
+            case 3:
+                return "Centimeters to Inches";
+            case 4:
+                return "Inches to Centimeters";
+            case 5:
+                return "Meters to Yards";
+            case 6:
+                return "Yards to Meters";
+            case 7:
+                return "Kilometers to Miles";
+            case 8:
+                return "Miles to Kilometers";                                    
+            default:
+                return "Error.";
+        }
+    }
 }
