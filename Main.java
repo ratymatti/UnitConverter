@@ -116,6 +116,7 @@ public class Main {
 
                     if (selectedUnits >= 1 && selectedUnits <= 6) {
                         unitsToConvert = GetUnits.getTemperatureUnits(selectedUnits);
+                        System.out.println("\n" + unitsToConvert);
                         validInput = true;    
                     } else {
                         System.out.println("Invalid input. Please enter a number between 1-6.");    
@@ -174,7 +175,7 @@ public class Main {
 
                     if (selectedUnits >= 1 && selectedUnits <= 6) {
                         unitsToConvert = GetUnits.getWeightUnits(selectedUnits);
-                        System.out.println(unitsToConvert);
+                        System.out.println("\n" + unitsToConvert);
                         validInput = true;    
                     } else {
                         System.out.println("Invalid input. Please enter a number between 1-6.");    
@@ -233,7 +234,7 @@ public class Main {
 
                     if (selectedUnits >= 1 && selectedUnits <= 8) {
                         unitsToConvert = GetUnits.getLengthUnits(selectedUnits);
-                        System.out.println(unitsToConvert);
+                        System.out.println("\n" + unitsToConvert);
                         validInput = true;    
                     } else {
                         System.out.println("Invalid input. Please enter a number between 1-8.");    
