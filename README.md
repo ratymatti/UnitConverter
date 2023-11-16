@@ -2,15 +2,15 @@
 
 ## Overview
 
-The Unit Converter is a Java program designed to convert between different units of measurement, specifically focusing on temperatures and weights. It provides a user-friendly command-line interface for users to input their choices and perform conversions easily.
+The Unit Converter is a Java program designed to convert between different units of measurement, specifically focusing on temperatures, weights and lengths. It provides a user-friendly command-line interface for users to input their choices and perform conversions easily.
 
 ## Features
 
 1. **Modular Structure:**
-   - The program is organized into modular functions for temperature and weight conversions, making it easy to extend for additional unit types in the future.
+   - The program is organized into modular functions for temperature, weight and length conversions, making it easy to extend for additional unit types in the future.
 
 2. **User Interaction:**
-   - The program guides the user through a series of menus, allowing them to choose the type of units they want to convert (temperatures or weights) and then select the specific conversion within that category.
+   - The program guides the user through a series of menus, allowing them to choose the type of units they want to convert (temperatures, weights or lengths) and then select the specific conversion within that category.
 
 3. **Error Handling:**
    - The program incorporates error handling to manage unexpected inputs gracefully. It informs the user of invalid inputs and prompts them to enter the correct information.
@@ -26,14 +26,14 @@ The Unit Converter is a Java program designed to convert between different units
    - The program will display a welcome message and prompt the user to choose the type of units to convert.
 
 2. **Choose Units:**
-   - Enter the corresponding number to select either temperatures (1) or weights (2).
+   - Enter the corresponding number to select either temperatures (1), weights (2) or lengths(3).
 
 3. **Select Conversion:**
    - Depending on the chosen unit type, the program will present a menu with specific conversion options.
    - Enter the number associated with the desired conversion.
 
 4. **Input Values:**
-   - Follow the on-screen instructions to input the temperature or weight you want to convert.
+   - Follow the on-screen instructions to input the temperature, weight or length you want to convert.
 
 5. **View Result:**
    - The program will display the converted result.
@@ -53,6 +53,7 @@ The Unit Converter is a Java program designed to convert between different units
     Choose units to convert:
     1: Temperatures
     2: Weights
+    3: Lengths
 
     Or type 'quit' to exit program.
 
@@ -76,6 +77,7 @@ The Unit Converter is a Java program designed to convert between different units
     Choose units to convert:
     1: Temperatures
     2: Weights
+    3: Lengths
 
     Or type 'quit' to exit program.
 
