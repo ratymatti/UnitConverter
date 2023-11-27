@@ -8,36 +8,36 @@ public class Main {
         switch(selection) {
             case "Units":
                 System.out.println("\nChoose units to convert:");
-                System.out.println("1: Temperatures");
-                System.out.println("2: Weights");
-                System.out.println("3. Lengths");
+                System.out.println("\n\t1: Temperatures");
+                System.out.println("\t2: Weights");
+                System.out.println("\t3. Lengths");
                 System.out.println("\nOr type 'quit' to exit program.");
                 break;
             case "Temperatures":
-                System.out.println("\n1. Fahrenheit to Celcius");
-                System.out.println("2. Celcius to Fahrenheit");
-                System.out.println("3. Celcius to Kelvin");
-                System.out.println("4. Kelvin to Celcius");
-                System.out.println("5. Fahrenheit to Kelvin");
-                System.out.println("6. Kelvin to Fahrenheit\n");
+                System.out.println("\n\t1. Fahrenheit to Celcius");
+                System.out.println("\t2. Celcius to Fahrenheit");
+                System.out.println("\t3. Celcius to Kelvin");
+                System.out.println("\t4. Kelvin to Celcius");
+                System.out.println("\t5. Fahrenheit to Kelvin");
+                System.out.println("\t6. Kelvin to Fahrenheit\n");
                 break;
             case "Weights":
-                System.out.println("\n1. Kilograms to Pounds");
-                System.out.println("2. Pounds to Kilograms");
-                System.out.println("3. Grams to Ounces");
-                System.out.println("4. Ounces to Grams");
-                System.out.println("5. Grams to Grains");
-                System.out.println("6. Grains to Grams\n");
+                System.out.println("\n\t1. Kilograms to Pounds");
+                System.out.println("\t2. Pounds to Kilograms");
+                System.out.println("\t3. Grams to Ounces");
+                System.out.println("\t4. Ounces to Grams");
+                System.out.println("\t5. Grams to Grains");
+                System.out.println("\t6. Grains to Grams\n");
                 break;
             case "Lengths":
-                System.out.println("\n1. Meters to Feet");
-                System.out.println("2. Feet to Meters");
-                System.out.println("3. Centimeters to Inches");
-                System.out.println("4. Inches to Centimeters");
-                System.out.println("5. Meters to Yards");
-                System.out.println("6. Yards to Meters");
-                System.out.println("7. Kilometers to Miles");
-                System.out.println("8. Miles to Kilometers\n");        
+                System.out.println("\n\t1. Meters to Feet");
+                System.out.println("\t2. Feet to Meters");
+                System.out.println("\t3. Centimeters to Inches");
+                System.out.println("\t4. Inches to Centimeters");
+                System.out.println("\t5. Meters to Yards");
+                System.out.println("\t6. Yards to Meters");
+                System.out.println("\t7. Kilometers to Miles");
+                System.out.println("\t8. Miles to Kilometers\n");        
         }
     }
 
